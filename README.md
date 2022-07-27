@@ -11,19 +11,20 @@
   2. 주의할 점은 `state`를 사용하지 않더라도 `state`까지 표시해줘야한다. 
 ```javascript
 getters: { // computed 의 역할
-    allUsersCount: state => {
-        return state.allUsers.length
-    }, 
-    countOfSeoul: state => {
-        let count = 0
-        state.allUsers.forEach((user) => {
-            if(user.address === 'Seoul') count++
-        })
-        return count
-    },
-    percentOfSeoul: (state, getters) => { // vuex 에서 내부적으로 파라미터의 순서가 있기 때문에 getters만 사용하더라도 state까지 선언해주어야 한다.
-        return Math.round(getters.countOfSeoul / getters.allUsersCount * 100)
-    }
+  allUsersCount: state => {
+    return state.allUsers.length
+  }, 
+  countOfSeoul: state => {
+    let count = 0
+    state.allUsers.forEach((user) => {
+      if (user.address === 'Seoul') count++
+    })
+    return count
+  },
+  percentOfSeoul: (state, getters) => { // vuex 에서 내부적으로 파라미터의 순서가 있기 때문에 getters만 사용하더라도 state까지 선언해주어야 한다.
+    return Math.round(getters.countOfSeoul / getters.allUsersCount * 100)
+  }
+}
 ```
 - `mapGetters` 사용하기
    1. 컴포넌트에서 `mapGetters` 를 import 한다.
