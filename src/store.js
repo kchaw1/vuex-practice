@@ -4,15 +4,27 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
+  state: { // data 의 역할
     allUsers:[
       {userId: 'hoza123', password: '123', name: 'Hoza', address: 'Seoul', src:'https://goo.gl/oqLfJR'},
       {userId: 'max123', password: '456', name: 'Max', address: 'Berlin', src:'https://goo.gl/Ksk9B9'},
       {userId: 'lego123', password: '789', name: 'Lego', address: 'Busan', src:'https://goo.gl/x7SpCD'}
     ]
   },
-  getters: {
-    allUsersCount: state => state.allUsers.length
+  getters: { // computed 의 역할
+    allUsersCount: state => {
+      return state.allUsers.length
+    },
+    countOfSeoul: state => {
+      let count = 0
+      state.allUsers.forEach((user) => {
+        if(user.address === 'Seoul') count++
+      })
+      return count
+    },
+    percentOfSeoul: (state, getters) => { // vuex 에서 내부적으로 파라미터의 순서가 있기 때문에 getters만 사용하더라도 state까지 선언해주어야 한다.
+      return Math.round(getters.countOfSeoul / getters.allUsersCount * 100)
+    }
   },
   mutations: {
 
