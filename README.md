@@ -24,3 +24,9 @@ npm run test
 ```
 npm run lint
 ```
+
+### Source
+> https://www.youtube.com/watch?v=gf_KAs7otf4&list=PLZzSdj89sCN292abcbI3utND8pA1T1OyB&index=1
+> 
+> 위 강의 의 실습코드 입니다.
+
