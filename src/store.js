@@ -11,6 +11,9 @@ export default new Vuex.Store({
       {userId: 'lego123', password: '789', name: 'Lego', address: 'Busan', src:'https://goo.gl/x7SpCD'}
     ]
   },
+  getters: {
+    allUsersCount: state => state.allUsers.length
+  },
   mutations: {
 
   },
