@@ -1,32 +1,6 @@
-# vuex-project
+# step1 - state
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Source
-> https://www.youtube.com/watch?v=gf_KAs7otf4&list=PLZzSdj89sCN292abcbI3utND8pA1T1OyB&index=1
-> 
-> 위 강의 의 실습코드 입니다.
-
+### 정리
+- AllUsers 컴포넌트의 data() 내에 있는 `allusers` 를 store.js 의 state 내로 옮긴다.
+- 이제 `allUsers`는 중앙저장소인 store 에서 관리하게 되고 어느 컴포넌트에서든 가져다 사용할 수 있다.
+- `$store.state.변수명` 을 통해서 접근 가능하다.
